@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <meta charset="utf-8">
+    <title>Vaterpolo klub Novi Beograd</title>
+    <meta name="description" content="VK Novi Beograd">
+    <meta name="author" content="Aca">
+    <link rel="stylesheet" href="css/style.css">    
+</head>
+
+<body>
+    <nav>
+        <ul>
+            <li class="margin-x"><a href="index.html" class="padding-5">Početna</a></li>
+            <li class="margin-x"><a href="galerija.html" class="padding-5">Galerija</a></li>
+            <li class="margin-x"><a href="o-nama.html" class="padding-5">O nama</a></li>
+            <li class="margin-x"><a href="upis.html" class="padding-5">Upis</a></li>
+            <li class="margin-x"><a href="kontakt.html" class="padding-5">Kontakt</a></li>
+        </ul>
+    </nav>
+    <main class="bg-none">
+        <div id="zakazivanje">
+            <h3>Forma za zakazivanje</h3>
+            <p>Unesite svoje podatke i željeni datum i vreme sastanka.
+                Putem mejla ćete primiti potvrdu ili najbliži slobodan termin.
+            </p>
+            <script type="text/javascript">
+                function validacija() {
+
+                    if (document.forms[0].ime.value == '') {
+                        alert("Niste uneli Vaše ime!");
+                        document.forms[0].ime.focus();
+                        return false;
+                    }
+                    if (document.forms[0].prezime.value == '') {
+                        alert("Niste uneli Vaše prezime!");
+                        document.forms[0].prezime.focus();
+                        return false;
+                    }
+                    if (document.forms[0].mejl.value == '') {
+                        alert("Niste uneli e-mail adresu!");
+                        document.forms[0].mail.focus();
+                        return false;
+                    }
+                    if (document.forms[0].datum.value == '') {
+                        alert("Niste uneli datum!");
+                        document.forms[0].mail.focus();
+                        return false;
+                    }
+                    if (document.forms[0].vreme.value == null) {
+                        alert("Niste uneli vreme!");
+                        document.forms[0].mail.focus();
+                        return false;
+                    }
+                    return confirm("Pokušati zakazivanje za odabrani termin?");
+                }
+            </script>
+            <div class="container margin-x">
+                <form action="" id="forma" onsubmit="return validacija()">
+                    <fieldset>
+                        <legend>Lični podaci</legend>
+
+                        <label>Ime</label>
+                        <input type="text" name="ime" /><br>
+                        <label>Prezime</label>
+                        <input type="text" name="prezime" /><br>
+                        <label>E-mail</label>
+                        <input type="email" name="mejl" /><br>
+                    </fieldset>
+                    <br>
+                    <fieldset>
+                        <legend>Termin</legend>
+
+                        <label>Datum</label>
+                        <input type="date" id="datum" /><br>
+                        <label>Vreme</label>
+                        <input type="time" id="vreme" /><br>
+                        <input type="submit" value="Zakaži" />
+                        <input type="reset" value="Resetuj" />
+                    </fieldset>
+                </form>
+            </div>
+        </div>
+        <br>
+        <div id="objDat">
+            <script>
+                var vremeSada = new Date();
+                document.write("<strong><font color=\"#00CC00\">Trenutno vreme:<\/font></strong> " + vremeSada);
+            </script>
+        </div>
+    </main>
+    <footer>VK Novi Beograd © 2019</footer>
+</body>
+
+</html>
